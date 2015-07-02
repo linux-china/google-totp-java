@@ -15,7 +15,4 @@ Google Authenticator for Java
 * Verify the code from "Google Authenticator" during login
 
 
-        boolean result = TOTP.checkCode("yoursecret",codefromapp);
-
-
-
+        boolean result = TOTP.checkCode("yoursecret",codefrominpu);
