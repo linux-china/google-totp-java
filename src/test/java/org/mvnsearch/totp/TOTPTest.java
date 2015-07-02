@@ -1,5 +1,6 @@
 package org.mvnsearch.totp;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 /**
@@ -17,6 +18,6 @@ public class TOTPTest {
 
     @Test
     public void testCheckCode() throws Exception {
-        System.out.println(TOTP.checkCode(randomCode, 11616));
+        Assert.assertTrue(TOTP.checkCode(randomCode, 672468));
     }
 }
