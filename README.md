@@ -16,3 +16,18 @@ Google Authenticator for Java
 
 
         boolean result = TOTP.checkCode("yoursecret",codefrominpu);
+
+
+### Token Repository
+Exchange token by Vault
+
+###  工作流程
+
+首先生成随机的token，然后提交到中心进行加密后保存，最后通过TOTP获取到这些随机token，进行相关的操作。
+
+### token的基本属性
+
+* 生成时间
+* token value
+* tags用于检索
+* 状态
