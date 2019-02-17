@@ -20,9 +20,8 @@ public class TOTP {
      * @param issuer       issuer
      * @param plaintSecret plain secret
      * @return auth url
-     * @throws Exception
      */
-    public static String getAuthUrl(String user, String issuer, String plaintSecret) throws Exception {
+    public static String getAuthUrl(String user, String issuer, String plaintSecret) {
         Base32 base32 = new Base32();
         String secret = base32.encodeToString(plaintSecret.getBytes());
         if (secret.contains("=")) {
@@ -36,9 +35,9 @@ public class TOTP {
      *
      * @param plainSecret plain secret
      * @param code        code
-     * @return valide indication
-     * @throws NoSuchAlgorithmException
-     * @throws InvalidKeyException
+     * @return legal indication
+     * @throws NoSuchAlgorithmException no such algorithm exception
+     * @throws InvalidKeyException      invalid key exception
      */
     public static boolean checkCode(String plainSecret, long code) throws NoSuchAlgorithmException, InvalidKeyException {
         long t = System.currentTimeMillis() / 1000 / 30;
